@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biznes kalkulyatorlari</title>
+    <meta
+      name="description"
+      content="Biznes kalkulyatorlari — moliyaviy, savdo, soliq, ish haqi va investitsiya hisob-kitoblari"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark">BC</div>
+          <div>
+            <p class="eyebrow">Premium mahsulot</p>
+            <h1>Business Calculator Pack</h1>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Asosiy navigatsiya">
+          <button class="nav-item active" data-view="dashboard" type="button">Boshqaruv paneli</button>
+          <button class="nav-item" data-view="favorites" type="button">Sevimlilar</button>
+          <button class="nav-item" data-view="history" type="button">Tarix</button>
+          <button class="nav-item" data-view="settings" type="button">Sozlamalar</button>
+        </nav>
+
+        <div class="sidebar-section">
+          <h3>Sevimli kalkulyatorlar</h3>
+          <div id="sidebarFavorites" class="compact-list"></div>
+        </div>
+
+        <div class="sidebar-footer">
+          <p>Ushbu kalkulyatorlar umumiy hisob-kitob uchun mo‘ljallangan. Soliq, ish haqi, kredit va boshqa moliyaviy hisob-kitoblarning amaldagi shartlari qonunchilik va tashkilot siyosatiga qarab farq qilishi mumkin.</p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <button class="mobile-menu" id="sidebarToggle" type="button" aria-label="Menyu">☰</button>
+          <div>
+            <p class="eyebrow">Premium mahsulot</p>
+            <h2>Biznes kalkulyatorlari</h2>
+          </div>
+          <div class="topbar-actions">
+            <button class="secondary-button" id="themeToggle" type="button">Tungi rejim</button>
+            <button class="primary-button" id="settingsButton" type="button">Sozlamalar</button>
+          </div>
+        </header>
+
+        <section id="dashboard-view" class="view active">
+          <div class="page-header">
+            <div>
+              <p class="section-label">Boshqaruv paneli</p>
+              <h3>Biznes va moliyaviy hisob-kitoblarni tez va qulay bajaring.</h3>
+            </div>
+          </div>
+
+          <div class="search-box">
+            <input id="searchInput" type="search" placeholder="Kalkulyatorni qidiring..." aria-label="Kalkulyatorni qidiring" />
+          </div>
+
+          <div id="statsGrid" class="stats-grid" aria-live="polite"></div>
+
+          <div class="dashboard-section">
+            <div class="section-head">
+              <h3>Yaqin-yaqin ishlatilgan</h3>
+            </div>
+            <div id="recentList" class="compact-list" aria-live="polite"></div>
+          </div>
+
+          <div id="categoryGrid" class="category-grid" aria-live="polite"></div>
+
+          <div class="dashboard-section">
+            <div class="section-head">
+              <h3>Sevimli kalkulyatorlar</h3>
+            </div>
+            <div id="favoriteList" class="favorite-list" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section id="calculator-view" class="view hidden" aria-live="polite">
+          <div class="toolbar">
+            <button id="backToDashboard" class="secondary-button" type="button">Boshqaruv paneliga</button>
+          </div>
+          <div id="calculatorContent"></div>
+        </section>
+
+        <section id="history-view" class="view hidden">
+          <div class="section-head">
+            <h3>Hisob-kitoblar tarixi</h3>
+            <button id="exportHistoryBtn" class="primary-button" type="button">CSV export</button>
+          </div>
+          <div id="historyContent"></div>
+        </section>
+
+        <section id="settings-view" class="view hidden">
+          <div id="settingsContent"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+    <div id="modalRoot"></div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/charts.js"></script>
+    <script src="./js/calculators.js"></script>
+    <script src="./js/history.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
